@@ -1,0 +1,616 @@
+{
+  "name": "LearnOps - Course Inquiry Intake + AI Classification",
+  "nodes": [
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineByPosition",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        1024,
+        240
+      ],
+      "id": "fd536a21-83de-4f42-8f80-f2f5d6e953ba",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "YOUR_GOOGLE_SHEET_ID",
+          "mode": "list",
+          "cachedResultName": "LearnOps CRM Lead Log — GHL + n8n + AI Classification",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/YOUR_GOOGLE_SHEET_ID"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 139163973,
+          "mode": "list",
+          "cachedResultName": "Leads",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/YOUR_GOOGLE_SHEET_ID"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Suggested Tags": "={{ Array.isArray($json.suggested_tags) ? $json.suggested_tags.join(\", \") : $json.suggested_tags }}",
+            "Lead ID": "={{ $json.lead_id }}",
+            "Date Received": "={{ $json.date_received }}",
+            "Contact ID": "={{ $json.contact_id }}",
+            "Full Name": "={{ $json.full_name }}",
+            "Email": "={{ $json.email }}",
+            "Phone": "={{ $json.phone }}",
+            "Course Interest": "={{ $json.course_interest }}",
+            "Learning Goal": "={{ $json.learning_goal }}",
+            "Experience Level": "={{ $json.experience_level }}",
+            "Budget Range": "={{ $json.budget_range }}",
+            "Preferred Timeline": "={{ $json.preferred_start_timeline }}",
+            "Preferred Learning Format": "={{ $json.preferred_learning_format }}",
+            "Support Preferences": "={{ $json.support_preferences }}",
+            "Preferred Contact Method": "={{ $json.preferred_contact_method }}",
+            "Learning Notes": "={{ $json.learning_notes }}",
+            "Source": "={{ $json.source }}",
+            "Lead Score": "={{ $json.lead_score }}",
+            "Lead Temperature": "={{ $json.lead_temperature }}",
+            "Priority": "={{ $json.priority }}",
+            "Lead Category": "={{ $json.lead_category }}",
+            "Qualification Reason": "={{ $json.qualification_reason }}",
+            "Recommended action": "={{ $json.recommended_action }}",
+            "Suggested Pipeline Stage": "={{ $json.suggested_pipeline_stage }}",
+            "Personalized Email Angle": "={{ $json.personalized_email_angle }}",
+            "Admin Summary": "={{ $json.admin_summary }}"
+          },
+          "matchingColumns": [
+            "LearnOps CRM Lead Log — GHL + n8n + AI Classification"
+          ],
+          "schema": [
+            {
+              "id": "Lead ID",
+              "displayName": "Lead ID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Date Received",
+              "displayName": "Date Received",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Contact ID",
+              "displayName": "Contact ID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Full Name",
+              "displayName": "Full Name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Phone",
+              "displayName": "Phone",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Course Interest",
+              "displayName": "Course Interest",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Learning Goal",
+              "displayName": "Learning Goal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Experience Level",
+              "displayName": "Experience Level",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Budget Range",
+              "displayName": "Budget Range",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Preferred Timeline",
+              "displayName": "Preferred Timeline",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Preferred Learning Format",
+              "displayName": "Preferred Learning Format",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Support Preferences",
+              "displayName": "Support Preferences",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Preferred Contact Method",
+              "displayName": "Preferred Contact Method",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Learning Notes",
+              "displayName": "Learning Notes",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Source",
+              "displayName": "Source",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Lead Score",
+              "displayName": "Lead Score",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Lead Temperature",
+              "displayName": "Lead Temperature",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Priority",
+              "displayName": "Priority",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Lead Category",
+              "displayName": "Lead Category",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Qualification Reason",
+              "displayName": "Qualification Reason",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Recommended action",
+              "displayName": "Recommended action",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Suggested Pipeline Stage",
+              "displayName": "Suggested Pipeline Stage",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Suggested Tags",
+              "displayName": "Suggested Tags",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Personalized Email Angle",
+              "displayName": "Personalized Email Angle",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Admin Summary",
+              "displayName": "Admin Summary",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1296,
+        240
+      ],
+      "id": "501768f7-cb3d-48a2-9746-c6e82bf5970c",
+      "name": "Append row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "REPLACE_WITH_GOOGLE_SHEETS_CREDENTIAL_ID",
+          "name": "Google Sheets Demo Credential"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "learnops-intake",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -32,
+        0
+      ],
+      "id": "be05a8fc-43bc-4ea7-b08e-3cc7f3821e1a",
+      "name": "GHL Form Webhook",
+      "webhookId": "5909f055-904e-46ab-bdcc-0f62c2d65c84"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "a4da7652-95f3-48e3-a805-1f40f613b02e",
+              "name": "lead_id",
+              "value": "={{ 'LEARN-' + $now.toFormat('MMdd-HHmm') }}",
+              "type": "string"
+            },
+            {
+              "id": "6436e404-b03a-4be7-a2d9-4ae130c61ed1",
+              "name": "date_received",
+              "value": "={{ $now.toFormat('yyyy-MM-dd HH:mm:ss') }}",
+              "type": "string"
+            },
+            {
+              "id": "48b574da-f6a3-4a2f-85ef-437a9b9dfa6c",
+              "name": "contact_id",
+              "value": "={{ $json.body.contact_id }}",
+              "type": "string"
+            },
+            {
+              "id": "1ddafb1e-3f24-4821-bcc8-046b77ad3c7d",
+              "name": "first_name",
+              "value": "={{ $json.body.first_name }}",
+              "type": "string"
+            },
+            {
+              "id": "eabea581-159d-4235-81d2-d964c36220f0",
+              "name": "last_name",
+              "value": "={{ $json.body.last_name}}",
+              "type": "string"
+            },
+            {
+              "id": "ff079d87-7f68-4895-bc09-1e8e69d7a2ec",
+              "name": "full_name",
+              "value": "={{ $json.body.full_name }}",
+              "type": "string"
+            },
+            {
+              "id": "831238e8-e994-47b3-bd88-9e17081db10a",
+              "name": "email",
+              "value": "={{ $json.body.email }}",
+              "type": "string"
+            },
+            {
+              "id": "40c97ac9-efb1-4c1c-b0b6-c61313a9c1da",
+              "name": "phone",
+              "value": "={{ $json.body.phone }}",
+              "type": "string"
+            },
+            {
+              "id": "14b560b0-ce4c-437a-9628-2b3faf727a30",
+              "name": "course_interest",
+              "value": "={{ $json.body[\"Course Interest\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "1623e7ad-e01a-4f90-90de-c12e636a460e",
+              "name": "learning_goal",
+              "value": "={{ $json.body[\"Learning Goal\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "5bd4f59d-5f8d-433b-99a6-650ff96daa2b",
+              "name": "experience_level",
+              "value": "={{ $json.body[\"Experience Level\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "4d19d426-b29e-4272-80ca-2fb63d6421b7",
+              "name": "budget_range",
+              "value": "={{ $json.body[\"Budget Range\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "dfb4b24e-cb2c-4c73-91e3-c1556dd32575",
+              "name": "preferred_start_timeline",
+              "value": "={{ $json.body[\"Preferred Start Timeline\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "4878ad78-d2c4-4e5c-8833-d0139793ee17",
+              "name": "preferred_learning_format",
+              "value": "={{ $json.body[\"Preferred Learning Format\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "6edb5a12-13ab-48eb-9f18-a69b23e2ed80",
+              "name": "support_preferences",
+              "value": "={{ $json.body[\"Support Preferences\"][0] }}",
+              "type": "string"
+            },
+            {
+              "id": "c982a894-6df8-4fd1-ad36-1c1a1f374552",
+              "name": "preferred_contact_method",
+              "value": "={{ $json.body[\"Preferred Contact Method\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "e5ac1fe2-2006-4536-8aa7-fdc59ef7d6aa",
+              "name": "learning_notes",
+              "value": "={{ $json.body[\"Anything to Support Your Learning?\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "af37ed33-6dc5-4080-9e25-a53f62d0a76d",
+              "name": "source",
+              "value": "={{ $json.body.contact_source }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        208,
+        0
+      ],
+      "id": "88be01e7-26e6-4aa0-83c6-f6a42ec0f842",
+      "name": "Clean Lead Data"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-4O-MINI"
+        },
+        "responses": {
+          "values": [
+            {
+              "content": "=You are an AI enrollment assistant for LearnOps, an online course/coaching business that teaches AI automation, GoHighLevel, n8n, and freelance automation skills.\n\nYour task is to classify a new course inquiry for admin and CRM routing.\n\nImportant:\n- Do not overpromise results.\n- Do not give career guarantees.\n- Classify the lead based only on the submitted information.\n- Return valid JSON only.\n- Do not include markdown, explanations, or extra text outside the JSON.\n\nLead details:\n\nLead ID: {{ $json.lead_id }}\nName: {{ $json.full_name }}\nEmail: {{ $json.email }}\nPhone: {{ $json.phone }}\n\nCourse Interest: {{ $json.course_interest }}\nLearning Goal: {{ $json.learning_goal }}\nExperience Level: {{ $json.experience_level }}\nBudget Range: {{ $json.budget_range }}\nPreferred Start Timeline: {{ $json.preferred_start_timeline }}\nPreferred Learning Format: {{ $json.preferred_learning_format }}\nSupport Preferences: {{ $json.support_preferences }}\nPreferred Contact Method: {{ $json.preferred_contact_method }}\nLearning Notes: {{ $json.learning_notes }}\n\nClassify this lead and return this exact JSON structure:\n\n{\n  \"lead_score\": 0,\n  \"lead_temperature\": \"Hot/Warm/Cold\",\n  \"priority\": \"High/Medium/Low\",\n\"lead_category\": \"Choose only one: AI Automation, GoHighLevel, n8n, Freelance, Researching, Price Sensitive, Technical Concern\",\n  \"qualification_reason\": \"Short reason explaining the classification\",\n  \"recommended_action\": \"Recommended next step for the admin/team\",\n  \"suggested_pipeline_stage\": \"Hot Lead/Warm Nurture/Needs Qualification/Discount Inquiry/Technical Concern/New Inquiry\",\n  \"suggested_tags\": [\"tag_one\", \"tag_two\", \"tag_three\"],\n  \"personalized_email_angle\": \"Short angle for the follow-up email\",\n  \"admin_summary\": \"One-sentence summary for internal notification\"\n}\n\nFor lead_category, choose only one primary category. Do not combine multiple categories with slashes.\n\nScoring guide:\n- Hot: 80-100. Ready to start immediately or this week, clear goal, enough budget, asks for coaching/support, strong intent.\n- Warm: 50-79. Interested but comparing options, needs payment plan, timeline within one month, has some hesitation.\n- Cold: 0-49. Just researching, not sure yet, unclear goal, low urgency, unsure budget.\n\nTag guide:\nUse short lowercase tags with hyphens, such as:\nlead-hot, lead-warm, lead-cold, course-ai-automation, course-ghl, course-n8n, course-freelance, price-sensitive, needs-followup, technical-concern, prefers-live-coaching, prefers-written-guides, flexible-pacing, visual-examples."
+            }
+          ]
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 2.3,
+      "position": [
+        496,
+        -80
+      ],
+      "id": "28c3af8b-46c5-4442-96b5-63de78e7409d",
+      "name": "AI Lead Scoring",
+      "credentials": {
+        "openAiApi": {
+          "id": "REPLACE_WITH_OPENAI_CREDENTIAL_ID",
+          "name": "OpenAI Demo Credential"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const aiText = $json.output[0].content[0].text;\n\nconst parsed = JSON.parse(aiText);\n\nreturn [\n  {\n    json: parsed\n  }\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        800,
+        -80
+      ],
+      "id": "ef0afacd-bf07-4bda-b722-338893fa1371",
+      "name": "Parse AI Classification"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GHL Form Webhook": {
+      "main": [
+        [
+          {
+            "node": "Clean Lead Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Clean Lead Data": {
+      "main": [
+        [
+          {
+            "node": "AI Lead Scoring",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "AI Lead Scoring": {
+      "main": [
+        [
+          {
+            "node": "Parse AI Classification",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse AI Classification": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "62cea1c9-404f-4b04-b81f-9b5613a2787d",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "09ad860b04c0bbd8f31e6719e08f09efc44c010e7ab15711e1f7c9d74b794ff3"
+  },
+  "nodeGroups": [],
+  "id": "GZyRYTx3VSLZkhSl",
+  "tags": []
+}
