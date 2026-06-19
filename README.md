@@ -2,8 +2,6 @@
 
 LearnOps is a demo automation system for an online course or coaching business. It captures course inquiries through GoHighLevel, sends lead data to n8n via webhook, classifies the lead using AI, and logs the full CRM record into Google Sheets.
 
-This project was built as a portfolio project to demonstrate CRM automation, webhook handling, AI-assisted lead classification, data mapping, JSON parsing, and reporting workflows.
-
 ---
 
 ## Project Goal
