@@ -1,6 +1,6 @@
 # LearnOps — GHL + n8n + AI Course Intake Automation
 
-LearnOps is a demo automation system for an online course or coaching business. It captures course inquiries through GoHighLevel, sends lead data to n8n via webhook, classifies the lead using AI, and logs the full CRM record into Google Sheets.
+LearnOps is an automation system for an online course or coaching business. It captures course inquiries through GoHighLevel, sends lead data to n8n via webhook, classifies the lead using AI, and logs the full CRM record into Google Sheets.
 
 ---
 
